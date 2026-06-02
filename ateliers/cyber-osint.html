@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyber / OSINT</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a href="../index.html" class="back">← Retour à l'accueil</a>
+
+<article>
+  <header>
+    <h1>Cyber / OSINT</h1>
+    <p>Enquête sur un inconnu avec des outils publics</p>
+  </header>
+
+  <section>
+    <h2>Objectif</h2>
+    <p>Découvrir ce qu'on peut trouver sur quelqu'un uniquement avec des informations publiques — et comprendre ce que ça dit de ta propre empreinte numérique.</p>
+    <p><strong>OSINT</strong> = Open Source INTelligence. Renseignement à partir de sources ouvertes.</p>
+  </section>
+
+  <section>
+    <h2>La mission</h2>
+    <p>Tu dois retrouver un maximum d'informations sur une personne à partir d'un seul indice de départ : un pseudonyme.</p>
+    <div class="iteration">
+      <strong>Pseudonyme de départ :</strong> <code>amensch42</code>
+    </div>
+  </section>
+
+  <section>
+    <h2>Acte 1 — WhatsMyName</h2>
+    <p>Aller sur <a href="https://whatsmyname.app" target="_blank">whatsmyname.app</a> et chercher le pseudonyme.</p>
+    <p>Cet outil scanne des centaines de plateformes pour voir si le pseudo existe.</p>
+    <ul>
+      <li>Sur quelles plateformes le pseudo apparaît-il ?</li>
+      <li>Lesquelles semblent actives ?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Acte 2 — Google Dorks</h2>
+    <p>Les Google Dorks sont des requêtes avancées pour trouver des informations précises.</p>
+    <table>
+      <tr><th>Syntaxe</th><th>Effet</th></tr>
+      <tr><td><code>"amensch42"</code></td><td>Cherche exactement ce texte</td></tr>
+      <tr><td><code>site:github.com amensch42</code></td><td>Cherche uniquement sur GitHub</td></tr>
+      <tr><td><code>"arthur mensch" site:linkedin.com</code></td><td>Cherche un nom sur LinkedIn</td></tr>
+      <tr><td><code>filetype:pdf "arthur mensch"</code></td><td>Cherche des PDF contenant ce nom</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Acte 3 — GitHub</h2>
+    <p>Explorer le profil GitHub trouvé :</p>
+    <ul>
+      <li>Quelle est la bio ? Que révèle-t-elle ?</li>
+      <li>Y a-t-il des dépôts publics ?</li>
+      <li>Y a-t-il une adresse ou localisation mentionnée ?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Acte 4 — Street View</h2>
+    <p>Si une adresse ou un lieu est mentionné, utiliser Google Street View pour le visualiser.</p>
+    <p>Que peut-on déduire de ce qu'on voit ?</p>
+  </section>
+
+  <section>
+    <h2>Débrief — Ton empreinte numérique</h2>
+    <p>Après l'enquête : que peut-on trouver sur <strong>toi</strong> avec les mêmes outils ?</p>
+    <ul>
+      <li>Tes comptes sont-ils publics ou privés ?</li>
+      <li>Qu'est-ce que tu veux que les autres voient ?</li>
+      <li>Ton site GitHub Pages est public — qu'y as-tu mis ?</li>
+    </ul>
+  </section>
+
+</article>
+
+</body>
+</html>

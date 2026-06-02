@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scratch — Jeu Asteroid</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a href="../index.html" class="back">← Retour à l'accueil</a>
+
+<article>
+  <header>
+    <h1>Scratch — Jeu Asteroid</h1>
+    <p>Construire un jeu en 4 itérations</p>
+  </header>
+
+  <section>
+    <h2>Objectif</h2>
+    <p>Construire un jeu Asteroid complet dans Scratch, étape par étape. Chaque itération produit quelque chose qui fonctionne — comme les vrais développeurs travaillent.</p>
+  </section>
+
+  <section>
+    <h2>Itération 0 — Mise en place</h2>
+    <div class="iteration">
+      <strong>Objectif :</strong> créer les sprites, costumes et sons. Pas de code encore.
+    </div>
+    <p>Créer un nouveau projet sur <a href="https://scratch.mit.edu" target="_blank">scratch.mit.edu</a> et assembler :</p>
+    <table>
+      <tr><th>Élément</th><th>À créer</th></tr>
+      <tr><td>Fond d'écran</td><td>Bibliothèque : "Stars" ou "Space"</td></tr>
+      <tr><td>Vaisseau</td><td>Sprite "Rocketship" + costume explosion</td></tr>
+      <tr><td>Laser</td><td>Sprite dessiné : rectangle allongé, 3 couleurs</td></tr>
+      <tr><td>Astéroïde</td><td>Sprite "Rocks" + costume explosion</td></tr>
+      <tr><td>Sons</td><td>"Laser1" pour le laser, "Crunch" pour les explosions</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Itération 1 — Mouvements</h2>
+    <div class="iteration">
+      <strong>Objectif :</strong> faire bouger les sprites.
+    </div>
+    <ul>
+      <li><strong>Vaisseau :</strong> haut/bas avec les flèches, effet de flottement</li>
+      <li><strong>Laser :</strong> se déclenche avec Espace, part du vaisseau, son de laser, disparaît en bord d'écran</li>
+      <li><strong>Astéroïde :</strong> apparaît à droite à hauteur aléatoire, traverse l'écran de droite à gauche, réapparaît</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Itération 2 — Collisions</h2>
+    <div class="iteration">
+      <strong>Objectif :</strong> gérer les interactions entre sprites.
+    </div>
+    <ul>
+      <li><strong>Vaisseau touché par l'astéroïde :</strong> explose, son, réapparaît après 0,5s</li>
+      <li><strong>Astéroïde touché par le laser :</strong> explose, son, réapparaît à sa position initiale</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Itération 3 — Score et fin de partie</h2>
+    <div class="iteration">
+      <strong>Objectif :</strong> rendre le jeu complet.
+    </div>
+    <ul>
+      <li>Le vaisseau démarre avec 5 vies</li>
+      <li>Perd une vie à chaque collision</li>
+      <li>Gagne 1 point par astéroïde détruit</li>
+      <li>Fin de partie quand toutes les vies sont perdues</li>
+      <li>Fond animé en défilement pour l'impression de mouvement</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Variantes (bonus)</h2>
+    <ul>
+      <li>Tous les X points, augmenter la vitesse de l'astéroïde</li>
+      <li>Ajouter un 2ème astéroïde à 10 points</li>
+      <li>Ajouter un bouclier temporaire</li>
+      <li>Ajouter des power-ups</li>
+    </ul>
+  </section>
+
+</article>
+
+</body>
+</html>

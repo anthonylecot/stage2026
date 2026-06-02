@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML + CSS + GitHub Pages</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a href="../index.html" class="back">← Retour à l'accueil</a>
+
+<article>
+  <header>
+    <h1>HTML + CSS + GitHub Pages</h1>
+    <p>Construire et publier ton site personnel</p>
+  </header>
+
+  <section>
+    <h2>Objectif</h2>
+    <p>À la fin de cet atelier, tu auras publié un site HTML personnel sur GitHub Pages. Ce site sera ton portfolio pour tout le stage — tu y ajouteras une page après chaque atelier.</p>
+  </section>
+
+  <section>
+    <h2>Étape 1 — Mettre en place VS Code</h2>
+    <ol>
+      <li>Ouvrir VS Code</li>
+      <li>Créer un dossier <code>mon-site</code> sur le bureau</li>
+      <li><strong>File → Open Folder</strong> → sélectionner <code>mon-site</code></li>
+      <li>Dans l'explorateur à gauche : clic droit → <strong>New File</strong> → nommer <code>index.html</code></li>
+    </ol>
+    <div class="tip">
+      <strong>VS Code en 30 secondes :</strong> explorateur de fichiers à gauche, éditeur au centre, terminal en bas (<code>Ctrl+ù</code>). Pour voir ta page dans Chrome : glisse le fichier <code>index.html</code> dans le navigateur.
+    </div>
+  </section>
+
+  <section>
+    <h2>Étape 2 — Le squelette HTML</h2>
+    <p>Colle ce code dans ton <code>index.html</code> :</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mon site&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Bonjour, je m'appelle Prénom&lt;/h1&gt;
+  &lt;p&gt;Je suis stagiaire chez SAP en juin 2026.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    <table>
+      <tr><th>Balise</th><th>Rôle</th></tr>
+      <tr><td><code>&lt;!DOCTYPE html&gt;</code></td><td>Dit au navigateur que c'est du HTML5</td></tr>
+      <tr><td><code>&lt;head&gt;</code></td><td>Informations sur la page (non visibles)</td></tr>
+      <tr><td><code>&lt;meta charset="UTF-8"&gt;</code></td><td>Permet les accents</td></tr>
+      <tr><td><code>&lt;title&gt;</code></td><td>Texte dans l'onglet du navigateur</td></tr>
+      <tr><td><code>&lt;body&gt;</code></td><td>Tout ce qui s'affiche dans la page</td></tr>
+      <tr><td><code>&lt;h1&gt;</code></td><td>Titre principal</td></tr>
+      <tr><td><code>&lt;p&gt;</code></td><td>Paragraphe</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Étape 3 — Les balises essentielles</h2>
+    <pre><code>&lt;!-- Titres --&gt;
+&lt;h1&gt;Titre principal&lt;/h1&gt;
+&lt;h2&gt;Sous-titre&lt;/h2&gt;
+
+&lt;!-- Texte --&gt;
+&lt;p&gt;Un paragraphe.&lt;/p&gt;
+&lt;strong&gt;Texte en gras&lt;/strong&gt;
+&lt;em&gt;Texte en italique&lt;/em&gt;
+
+&lt;!-- Liste --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Élément 1&lt;/li&gt;
+  &lt;li&gt;Élément 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Lien --&gt;
+&lt;a href="https://sap.com"&gt;Visiter SAP&lt;/a&gt;
+
+&lt;!-- Image --&gt;
+&lt;img src="photo.jpg" alt="Description"&gt;</code></pre>
+  </section>
+
+  <section>
+    <h2>Étape 4 — Ajouter du CSS</h2>
+    <p>Créer un fichier <code>style.css</code> dans le même dossier. Puis lier le CSS dans le <code>&lt;head&gt;</code> de chaque page HTML :</p>
+    <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+    <p>Dans <code>style.css</code> :</p>
+    <pre><code>body {
+  background-color: #f5f5f5;
+  color: #333333;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #0070ad;
+}
+
+a {
+  color: #0070ad;
+}</code></pre>
+  </section>
+
+  <section>
+    <h2>Étape 5 — Publier sur GitHub Pages</h2>
+    <p>Dans le terminal VS Code (<code>Ctrl+ù</code>) :</p>
+    <pre><code>git init
+git add .
+git commit -m "Premier commit - mon site de stage"
+git branch -M main
+git remote add origin https://github.com/TON_PSEUDO/mon-site.git
+git push -u origin main</code></pre>
+    <p>Ensuite sur GitHub : <strong>Settings → Pages → Deploy from branch → main → Save</strong></p>
+    <p>Ton site sera accessible à : <code>https://TON_PSEUDO.github.io/mon-site</code></p>
+    <div class="tip">
+      Pour mettre à jour ton site après chaque atelier :<br>
+      <code>git add .</code> → <code>git commit -m "Ajout page Scratch"</code> → <code>git push</code>
+    </div>
+  </section>
+
+</article>
+
+</body>
+</html>

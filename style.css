@@ -1,0 +1,195 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #f5f7fa;
+  color: #1a1a2e;
+  line-height: 1.6;
+}
+
+header {
+  background: #0070ad;
+  color: white;
+  padding: 2rem 1.5rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+header .subtitle {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #0070ad;
+  margin-bottom: 1rem;
+}
+
+ul.ateliers {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+ul.ateliers li a {
+  display: block;
+  padding: 0.6rem 1rem;
+  background: #f0f7fc;
+  border-left: 3px solid #0070ad;
+  color: #0070ad;
+  text-decoration: none;
+  border-radius: 0 4px 4px 0;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+ul.ateliers li a:hover {
+  background: #d6eaf8;
+}
+
+ul#sites-stagiaires {
+  list-style: none;
+  padding: 0;
+}
+
+ul#sites-stagiaires li {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+ul#sites-stagiaires li:last-child {
+  border-bottom: none;
+}
+
+ul#sites-stagiaires a {
+  color: #0070ad;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Pages atelier */
+article {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+article header {
+  background: none;
+  color: #1a1a2e;
+  padding: 1.5rem 0 0.5rem;
+  border-bottom: 2px solid #0070ad;
+  margin-bottom: 1.5rem;
+}
+
+article header h1 {
+  color: #0070ad;
+  font-size: 1.6rem;
+}
+
+article section {
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.back {
+  display: inline-block;
+  margin: 1rem 0;
+  color: #0070ad;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+  margin: 0.8rem 0;
+}
+
+code {
+  font-family: "Fira Code", "Courier New", monospace;
+}
+
+p code, li code {
+  background: #f0f7fc;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  color: #0070ad;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.8rem 0;
+  font-size: 0.95rem;
+}
+
+th {
+  background: #f0f7fc;
+  color: #0070ad;
+  text-align: left;
+  padding: 0.5rem 0.8rem;
+}
+
+td {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.iteration {
+  border-left: 4px solid #0070ad;
+  background: #f0f7fc;
+  padding: 0.8rem 1rem;
+  margin: 0.8rem 0;
+  border-radius: 0 6px 6px 0;
+}
+
+.tip {
+  border-left: 4px solid #4caf50;
+  background: #e8f5e9;
+  padding: 0.8rem 1rem;
+  margin: 0.8rem 0;
+  border-radius: 0 6px 6px 0;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mbot — Course de robots</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a href="../index.html" class="back">← Retour à l'accueil</a>
+
+<article>
+  <header>
+    <h1>Mbot — Course de robots</h1>
+    <p>Monter, programmer, tracer la piste, décider des règles</p>
+  </header>
+
+  <section>
+    <h2>Objectif</h2>
+    <p>Monter un robot, programmer un algorithme de suivi de ligne, concevoir une piste sur des feuilles A0 assemblées — et organiser une course dont vous aurez vous-mêmes décidé les règles.</p>
+  </section>
+
+  <section>
+    <h2>Les rôles (tournants)</h2>
+    <p>Trois fonctions dans chaque équipe, qui <strong>tournent à chaque itération</strong> :</p>
+    <table>
+      <tr><th>Rôle</th><th>Tâche</th></tr>
+      <tr><td>Codeurs</td><td>Programmer l'algo dans mBlock</td></tr>
+      <tr><td>Dessinateurs</td><td>Concevoir et tracer la piste sur les feuilles A0</td></tr>
+      <tr><td>Comité des règles</td><td>Définir les règles de course, gérer les litiges</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>La piste</h2>
+    <p>La piste est tracée au feutre noir épais sur des feuilles A0 assemblées au sol. Elle évolue à chaque itération.</p>
+    <div class="tip">
+      Largeur de trait : 2–3 cm minimum. Le capteur mbot lit le contraste noir/blanc.
+    </div>
+  </section>
+
+  <section>
+    <h2>Itération 1 — Boucle simple</h2>
+    <div class="iteration">
+      <strong>Objectif :</strong> faire avancer le robot sur la ligne.
+    </div>
+    <p>L'algo de base à comprendre :</p>
+    <pre><code>SI capteur gauche = noir ET capteur droit = blanc → tourner à gauche
+SI capteur gauche = blanc ET capteur droit = noir → tourner à droite
+SI les deux = noir → avancer tout droit
+SI les deux = blanc → on est sorti → s'arrêter</code></pre>
+  </section>
+
+  <section>
+    <h2>Itération 2 — Optimisation</h2>
+    <div class="iteration">
+      <strong>Objectif :</strong> aller plus vite sans sortir de piste.
+    </div>
+    <p>Augmenter la vitesse, ajuster l'amplitude des virages. Pourquoi les robots n'ont-ils pas tous le même comportement ?</p>
+  </section>
+
+  <section>
+    <h2>Itération 3 — Détecteur de collision</h2>
+    <div class="iteration">
+      <strong>Objectif :</strong> ajouter le capteur ultrason frontal.
+    </div>
+    <p>Si un obstacle est détecté à moins de X cm → s'arrêter. Le comité des règles décide comment l'intégrer dans les règles de course.</p>
+  </section>
+
+  <section>
+    <h2>Itération 4 — Piste finale</h2>
+    <div class="iteration">
+      <strong>Objectif :</strong> concevoir le circuit définitif pour la course.
+    </div>
+    <p>Au moins un virage serré, une ligne droite, une zone de dépassement. Les dessinateurs proposent, tout le monde valide.</p>
+  </section>
+
+  <section>
+    <h2>Les règles (comité)</h2>
+    <p>Les règles se construisent par itération, comme le code. Le comité présente les règles finales avant la course — elles sont affichées et votées.</p>
+    <p>Questions à trancher : départ simultané ou décalé ? Sortie de piste = disqualification ou pénalité ? Combien de manches ?</p>
+  </section>
+
+</article>
+
+</body>
+</html>
