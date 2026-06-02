@@ -87,7 +87,72 @@
   </section>
 
   <section>
-    <h2>Étape 4 — Ajouter du CSS</h2>
+    <h2>Étape 4 — Liens entre pages</h2>
+    <p>Quand ton site a plusieurs pages, il faut pouvoir naviguer entre elles.</p>
+    <p>Dans <code>index.html</code>, ajouter un lien vers une autre page du site :</p>
+    <pre><code>&lt;a href="agenda.html"&gt;Mon agenda&lt;/a&gt;</code></pre>
+    <p>Dans <code>agenda.html</code>, ajouter le lien retour :</p>
+    <pre><code>&lt;a href="index.html"&gt;← Retour à l'accueil&lt;/a&gt;</code></pre>
+    <p>Pour pointer vers une section précise dans la même page, on utilise un <strong>ancre</strong> :</p>
+    <pre><code>&lt;!-- La cible --&gt;
+&lt;h2 id="semaine1"&gt;Semaine 1&lt;/h2&gt;
+
+&lt;!-- Le lien qui y mène --&gt;
+&lt;a href="#semaine1"&gt;Voir semaine 1&lt;/a&gt;</code></pre>
+    <p>On peut aussi créer une barre de navigation en haut de chaque page :</p>
+    <pre><code>&lt;nav&gt;
+  &lt;a href="index.html"&gt;Accueil&lt;/a&gt;
+  &lt;a href="agenda.html"&gt;Agenda&lt;/a&gt;
+  &lt;a href="scratch.html"&gt;Scratch&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+    <div class="tip">
+      Copie-colle la même <code>&lt;nav&gt;</code> dans chaque fichier HTML — comme ça la navigation est identique sur tout le site.
+    </div>
+  </section>
+
+  <section>
+    <h2>Étape 5 — Tableaux</h2>
+    <p>Un tableau HTML se structure avec 3 balises : <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (ligne), <code>&lt;td&gt;</code> (cellule). Pour les en-têtes : <code>&lt;th&gt;</code>.</p>
+    <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Jour&lt;/th&gt;
+    &lt;th&gt;Matin&lt;/th&gt;
+    &lt;th&gt;Après-midi&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Lundi&lt;/td&gt;
+    &lt;td&gt;HTML&lt;/td&gt;
+    &lt;td&gt;HTML CSS&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Mardi&lt;/td&gt;
+    &lt;td&gt;CSS + interview&lt;/td&gt;
+    &lt;td&gt;OpenCode&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    <p>Pour que le tableau soit lisible, ajouter dans <code>style.css</code> :</p>
+    <pre><code>table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #cccccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #0070ad;
+  color: white;
+}</code></pre>
+    <div class="tip">
+      L'agenda du stage est un bon exercice : un tableau avec les jours en lignes et matin/après-midi en colonnes.
+    </div>
+  </section>
+
+  <section>
+    <h2>Étape 6 — Ajouter du CSS</h2>
     <p>Créer un fichier <code>style.css</code> dans le même dossier. Puis lier le CSS dans le <code>&lt;head&gt;</code> de chaque page HTML :</p>
     <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
     <p>Dans <code>style.css</code> :</p>
