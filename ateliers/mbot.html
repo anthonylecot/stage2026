@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mbot — Course de robots — Stage Seconde 2026</title>
+  <link rel="stylesheet" href="/stage2026/assets/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/stage2026/">Agenda</a>
+      <a href="/stage2026/ateliers/">Ateliers</a>
+      <a href="/stage2026/checklist">Checklist</a>
+    </nav>
+  </header>
+  <main>
+    <h1 id="mbot--course-de-robots">Mbot — Course de robots</h1>
+
+<p><strong>Durée :</strong> 1 journée complète (jeudi S2 matin + après-midi + vendredi S2 matin)<br />
+<strong>Matériel :</strong> 3 robots mbot, piles de rechange, feuilles A0, crayons feutres noirs épais, ordinateurs avec mBlock<br />
+<strong>Groupes :</strong> 7 stagiaires ensemble (semaine pivot), 3 équipes</p>
+
+<hr />
+
+<h2 id="objectif-pédagogique">Objectif pédagogique</h2>
+
+<p>À la fin de cet atelier, les stagiaires auront monté un robot, programmé un algorithme de suivi de ligne en plusieurs itérations, conçu une piste sur feuilles A0 assemblées, et organisé une course dont ils ont eux-mêmes établi les règles.</p>
+
+<hr />
+
+<h2 id="organisation-des-rôles">Organisation des rôles</h2>
+
+<p>Trois fonctions structurent l’atelier, mais <strong>les rôles tournent au sein de chaque équipe</strong> : chaque stagiaire passe par le code, le dessin de piste, et les règles. La pluridisciplinarité est l’objectif — pas la spécialisation.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rôle</th>
+      <th>Tâche principale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Codeurs</strong></td>
+      <td>Programment l’algo de suivi de ligne dans mBlock</td>
+    </tr>
+    <tr>
+      <td><strong>Dessinateurs de piste</strong></td>
+      <td>Conçoivent et tracent le circuit sur les feuilles A0</td>
+    </tr>
+    <tr>
+      <td><strong>Comité des règles</strong></td>
+      <td>Définissent les règles de la course, gèrent les litiges</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Rotation suggérée :</strong></p>
+<ul>
+  <li>Itération 1 → chacun prend un rôle</li>
+  <li>Itération 2 → on tourne : le codeur devient dessinateur, le dessinateur rejoint le comité, etc.</li>
+  <li>Piste finale → libre, mais chacun doit avoir touché au moins deux rôles différents</li>
+</ul>
+
+<blockquote>
+  <p>L’objectif n’est pas d’avoir des spécialistes — c’est que chaque lycéen comprenne comment les trois dimensions s’articulent. Un bon algo sur une mauvaise piste perd. De bonnes règles mal comprises créent des litiges. Tout est lié.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="la-piste--feuilles-a0-assemblées">La piste — feuilles A0 assemblées</h2>
+
+<p>La piste est tracée <strong>au crayon feutre noir épais</strong> sur des grandes feuilles de calendrier format A0, assemblées bord à bord pour former un circuit de la taille d’une table ou du sol.</p>
+
+<p><strong>Avantages :</strong></p>
+<ul>
+  <li>Traçable, effaçable (avec du blanc), modifiable entre les itérations</li>
+  <li>Modulaire : on peut ajouter des feuilles pour agrandir</li>
+  <li>Réutilisable d’une session à l’autre</li>
+</ul>
+
+<p><strong>Contraintes techniques à respecter :</strong></p>
+<ul>
+  <li>Largeur de ligne : 2–3 cm (le capteur mbot a un écartement fixe)</li>
+  <li>Pas de virage trop serré au début (rayon minimum ~15cm)</li>
+  <li>Fond clair, trait foncé — le capteur lit le contraste</li>
+</ul>
+
+<hr />
+
+<h2 id="les-itérations">Les itérations</h2>
+
+<h3 id="itération-1--boucle-simple">Itération 1 — Boucle simple</h3>
+
+<p>Le circuit de départ : <strong>une simple boucle ovale</strong>, tracée sur 2–3 feuilles A0.</p>
+
+<p>Objectif : faire avancer le robot sur la ligne. On comprend le capteur N/B, on code le premier algo de suivi.</p>
+
+<p><strong>L’algo de base à construire :</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SI capteur gauche = noir ET capteur droit = blanc → tourner à gauche
+SI capteur gauche = blanc ET capteur droit = noir → tourner à droite
+SI les deux = noir → avancer tout droit
+SI les deux = blanc → on est sorti de la piste → s'arrêter ?
+</code></pre></div></div>
+
+<p>On teste, on observe, on ajuste la vitesse et l’amplitude des virages.</p>
+
+<hr />
+
+<h3 id="itération-2--optimisation">Itération 2 — Optimisation</h3>
+
+<p>Même boucle, mais on cherche à <strong>aller plus vite</strong> sans sortir de piste.</p>
+
+<p>Questions à poser aux codeurs :</p>
+<ul>
+  <li>Qu’est-ce qui fait rater le robot dans un virage ?</li>
+  <li>Comment augmenter la vitesse sans perdre la ligne ?</li>
+  <li>Est-ce que tous les robots ont le même comportement ? Pourquoi ?</li>
+</ul>
+
+<hr />
+
+<h3 id="itération-3--détecteur-de-collision">Itération 3 — Détecteur de collision</h3>
+
+<p>Avant la course finale, chaque robot est équipé d’un <strong>détecteur de collision</strong> (capteur ultrason frontal du mbot).</p>
+
+<p>Comportement à programmer : si obstacle détecté à moins de X cm → s’arrêter (ou klaxonner, ou reculer).</p>
+
+<blockquote>
+  <p>C’est aussi une règle de victoire possible : le robot qui percute un autre est disqualifié, ou perd un point.</p>
+</blockquote>
+
+<p>Le comité des règles décide comment intégrer le détecteur dans les règles de course.</p>
+
+<hr />
+
+<h3 id="itération-4--piste-finale">Itération 4 — Piste finale</h3>
+
+<p>Les dessinateurs de piste créent le <strong>circuit définitif</strong> : plus grand, plus complexe, sur toutes les feuilles A0 disponibles.</p>
+
+<p>Contraintes suggérées (à négocier avec le comité des règles) :</p>
+<ul>
+  <li>Au moins un virage serré</li>
+  <li>Une ligne droite (sprint)</li>
+  <li>Une zone d’intersection ou de croisement (si 2 robots sur la même piste)</li>
+</ul>
+
+<hr />
+
+<h2 id="le-comité-des-règles--processus-itératif">Le comité des règles — processus itératif</h2>
+
+<p>Les règles ne sont pas données : elles se construisent par itération, comme le code.</p>
+
+<p><strong>Session 1 — Règles minimales :</strong></p>
+<ul>
+  <li>Comment démarre-t-on ? (départ simultané / décalé / lancé)</li>
+  <li>Qu’est-ce qui disqualifie ? (sortie de piste, collision, coup de main)</li>
+</ul>
+
+<p><strong>Session 2 — Règles enrichies :</strong></p>
+<ul>
+  <li>Combien de manches ?</li>
+  <li>En cas d’égalité ?</li>
+  <li>Le détecteur de collision : pénalité ou disqualification ?</li>
+</ul>
+
+<p><strong>Session 3 (avant course) — Règles finales :</strong></p>
+<ul>
+  <li>Le comité présente les règles à tout le monde</li>
+  <li>Vote ou consensus</li>
+  <li>Les règles sont écrites sur une feuille et affichées</li>
+</ul>
+
+<blockquote>
+  <p>L’animateur ne tranche pas les litiges — c’est le comité qui décide. L’animateur peut poser des questions pour débloquer : “Si vous ne vous mettez pas d’accord, comment vous décidez ?”</p>
+</blockquote>
+
+<hr />
+
+<h2 id="timing">Timing</h2>
+
+<h3 id="jeudi-matin--montage--piste-simple-3h">Jeudi matin — Montage + piste simple (3h)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Durée</th>
+      <th>Étape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0:00</td>
+      <td>Question d’ouverture — le capteur</td>
+    </tr>
+    <tr>
+      <td>0:20</td>
+      <td>Distribution des kits, montage en équipe</td>
+    </tr>
+    <tr>
+      <td>1:45</td>
+      <td>Chaque équipe présente son robot monté</td>
+    </tr>
+    <tr>
+      <td>2:00</td>
+      <td>Tracé de la piste itération 1 (boucle simple)</td>
+    </tr>
+    <tr>
+      <td>2:20</td>
+      <td>Premier test de déplacement manuel</td>
+    </tr>
+    <tr>
+      <td>2:45</td>
+      <td>Fin montage / ajustements</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="jeudi-après-midi--premier-algo--itérations-3h">Jeudi après-midi — Premier algo + itérations (3h)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Durée</th>
+      <th>Étape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0:00</td>
+      <td>Question d’ouverture algo</td>
+    </tr>
+    <tr>
+      <td>0:15</td>
+      <td>Introduction mBlock : blocs capteur N/B</td>
+    </tr>
+    <tr>
+      <td>0:30</td>
+      <td>Itération 1 — coder l’algo de base, tester sur boucle simple</td>
+    </tr>
+    <tr>
+      <td>1:15</td>
+      <td>Itération 2 — optimiser la vitesse, régler les virages</td>
+    </tr>
+    <tr>
+      <td>2:00</td>
+      <td>Itération 3 — ajouter le détecteur de collision</td>
+    </tr>
+    <tr>
+      <td>2:30</td>
+      <td>Tour de table : qu’est-ce qui marche, qu’est-ce qui rate ?</td>
+    </tr>
+    <tr>
+      <td>2:45</td>
+      <td>Comité des règles : session 1 (règles minimales)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="vendredi-matin--piste-finale--course-3h">Vendredi matin — Piste finale + course (3h)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Durée</th>
+      <th>Étape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0:00</td>
+      <td>Comité des règles : session 2 (enrichissement)</td>
+    </tr>
+    <tr>
+      <td>0:20</td>
+      <td>Dessinateurs : tracé de la piste finale (itération 4)</td>
+    </tr>
+    <tr>
+      <td>0:45</td>
+      <td>Codeurs : derniers réglages algo sur piste finale</td>
+    </tr>
+    <tr>
+      <td>1:15</td>
+      <td>Comité des règles : session 3 (règles définitives + affichage)</td>
+    </tr>
+    <tr>
+      <td>1:30</td>
+      <td>Course ! (manches selon les règles décidées)</td>
+    </tr>
+    <tr>
+      <td>2:15</td>
+      <td>Débrief : pourquoi tel robot a gagné ? Variable piles / algo / piste ?</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="kit-danimation">Kit d’animation</h2>
+
+<div class="kit">
+
+  <p><strong>Question d’ouverture — Le capteur</strong></p>
+
+  <blockquote>
+    <p>“Comment vous pensez que le robot sait qu’il est sur la ligne ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Discussion sur les capteurs, la lumière réfléchie, le contraste noir/blanc. On introduit le principe du capteur de ligne avant de commencer le montage.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Montrer le capteur sous le robot et une feuille blanche vs noire. Demander : “Qu’est-ce qui change selon la couleur ?”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question d’ouverture — Algo</strong></p>
+
+  <blockquote>
+    <p>“Le robot est sur la ligne. Il dévie à droite. Il doit faire quoi ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Ils formalisent la logique : si capteur gauche voit noir → tourner à gauche. On construit ensemble l’algo de base avant de coder.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Faire “jouer le robot” à un stagiaire : le mettre sur une ligne au sol et lui dire de la suivre les yeux fermés en tâtonnant avec les pieds. Qu’est-ce qu’il fait instinctivement ?</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question piste finale</strong></p>
+
+  <blockquote>
+    <p>“On a une boucle simple qui marche. Qu’est-ce qui rendrait la course vraiment intéressante ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Discussion sur : virages serrés vs larges, longueur, zones de dépassement, intersections. Les dessinateurs proposent, tout le monde valide.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Proposer trois éléments à voter : “Virage en épingle à cheveux — oui ou non ? Ligne droite de sprint — oui ou non ? Zone de croisement — oui ou non ?”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question débrief course</strong></p>
+
+  <blockquote>
+    <p>“Pourquoi ce robot a gagné ? C’est le meilleur algo, la meilleure piste, ou les meilleures piles ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Discussion sur les variables : vitesse de pointe, robustesse dans les virages, état des batteries, qualité du tracé. Il n’y a pas une seule réponse — c’est le point.</p>
+
+</div>
+
+<hr />
+
+<h2 id="matériel-détaillé">Matériel détaillé</h2>
+
+<ul>
+  <li>3 kits mbot complets (vis, moteurs, châssis, capteur de ligne, capteur ultrason)</li>
+  <li>Piles AA × 12 (4 par robot) + rechange</li>
+  <li>Feuilles A0 (anciens calendriers ou papier craft) × 6–8 minimum</li>
+  <li>Crayons feutres noirs épais (3–4mm) × 4</li>
+  <li>Ruban adhésif pour assembler les feuilles au sol</li>
+  <li>Blanc correcteur ou masking tape pour corriger le tracé</li>
+  <li>Ordinateurs avec mBlock installé (ou mblock.cc en ligne)</li>
+  <li>Tournevis cruciforme</li>
+  <li>Une feuille pour afficher les règles officielles</li>
+</ul>
+
+<hr />
+
+<p><a href="../retours/mbot-rex.md">Retour d’expérience</a></p>
+
+  </main>
+</body>
+</html>

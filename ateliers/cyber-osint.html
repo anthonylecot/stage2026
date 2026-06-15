@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cyber / OSINT — Stage Seconde 2026</title>
+  <link rel="stylesheet" href="/stage2026/assets/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/stage2026/">Agenda</a>
+      <a href="/stage2026/ateliers/">Ateliers</a>
+      <a href="/stage2026/checklist">Checklist</a>
+    </nav>
+  </header>
+  <main>
+    <h1 id="cyber--osint--enquête-numérique">Cyber / OSINT — Enquête numérique</h1>
+
+<p><strong>Durée :</strong> 1 session (3h) + 30min GitHub Pages<br />
+<strong>Matériel :</strong> Ordinateurs, accès internet<br />
+<strong>Groupes :</strong> Groupe A (S1 ven matin), Groupe B (S3 jeu après-midi)</p>
+
+<hr />
+
+<h2 id="objectif-pédagogique">Objectif pédagogique</h2>
+
+<p>À la fin de cet atelier, les stagiaires auront mené une enquête OSINT complète sur un personnage fictif en 4 actes, compris ce qu’un inconnu peut trouver sur eux en ligne, et sécurisé leur propre site GitHub Pages.</p>
+
+<hr />
+
+<h2 id="timing">Timing</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Durée</th>
+      <th>Étape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0:00</td>
+      <td>Question d’ouverture</td>
+    </tr>
+    <tr>
+      <td>0:15</td>
+      <td>Mission briefing : présentation d’Arthur Mensch</td>
+    </tr>
+    <tr>
+      <td>0:25</td>
+      <td><strong>Acte 1</strong> — WhatsMyName : username hunting</td>
+    </tr>
+    <tr>
+      <td>0:40</td>
+      <td><strong>Acte 2</strong> — Google Dorks : recherche avancée</td>
+    </tr>
+    <tr>
+      <td>1:10</td>
+      <td><strong>Acte 3</strong> — GitHub : exploration du profil amensch42</td>
+    </tr>
+    <tr>
+      <td>1:30</td>
+      <td><strong>Acte 4</strong> — Street View : localiser le mur aux pattes de chat</td>
+    </tr>
+    <tr>
+      <td>2:00</td>
+      <td>Mise en commun : qu’avez-vous trouvé ?</td>
+    </tr>
+    <tr>
+      <td>2:15</td>
+      <td>Discussion : et sur vous ?</td>
+    </tr>
+    <tr>
+      <td>2:30</td>
+      <td>GitHub Pages : visibilité public/privé</td>
+    </tr>
+    <tr>
+      <td>2:45</td>
+      <td>Débrief</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="personnage-fictif--dossier-enquête">Personnage fictif — Dossier enquête</h2>
+
+<p><strong>Identité fictive :</strong> Arthur Mensch <em>(clin d’œil à Mistral AI — à mentionner en débrief)</em><br />
+<strong>Point de départ donné aux stagiaires :</strong> <code class="language-plaintext highlighter-rouge">arthur.mensch@proton.me</code><br />
+<strong>Mission :</strong> <em>“À partir de cette adresse email, retrouvez tout ce que vous pouvez sur cette personne.”</em></p>
+
+<h3 id="ce-qui-est-planté-en-amont">Ce qui est planté en amont</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Élément</th>
+      <th>Valeur</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GitHub</td>
+      <td><a href="https://github.com/amensch42">amensch42</a></td>
+    </tr>
+    <tr>
+      <td>Bio GitHub</td>
+      <td>Rue de l’adresse fictive</td>
+    </tr>
+    <tr>
+      <td>Avatar GitHub</td>
+      <td>Photo d’un indice visuel (patte de chat)</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>arthur.mensch@proton.me</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="ce-quils-doivent-trouver--étape-par-étape">Ce qu’ils doivent trouver — étape par étape</h3>
+
+<p><strong>Acte 1 — WhatsMyName</strong></p>
+<ul>
+  <li>Aller sur <a href="https://whatsmyname.app">whatsmyname.app</a></li>
+  <li>Chercher le pseudo <code class="language-plaintext highlighter-rouge">amensch42</code></li>
+  <li>Résultat : profil GitHub détecté → ils ont un point d’entrée</li>
+</ul>
+
+<p><strong>Acte 2 — Google Dorks</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">site:github.com "amensch42"</code> → trouve le profil et les repos publics</li>
+  <li><code class="language-plaintext highlighter-rouge">"arthur mensch" développeur</code> → cherche des mentions sur le web</li>
+  <li><code class="language-plaintext highlighter-rouge">"arthur.mensch@proton.me"</code> → cherche si l’email traîne quelque part</li>
+  <li>Résultat : confirmation du profil, repos publics, bio avec la rue</li>
+</ul>
+
+<p><strong>Acte 3 — GitHub</strong></p>
+<ul>
+  <li>Explorer le profil <a href="https://github.com/amensch42">amensch42</a></li>
+  <li>Lire la bio → trouver la rue</li>
+  <li>Regarder les repos publics → centres d’intérêt, compétences</li>
+  <li>Résultat : adresse partielle + avatar mystérieux</li>
+</ul>
+
+<p><strong>Acte 4 — Street View</strong></p>
+<ul>
+  <li>Aller sur Google Maps → Street View → remonter la rue trouvée dans la bio</li>
+  <li>Chercher un mur avec 4 pattes de chat peintes</li>
+  <li>Résultat : localisation précise de “l’adresse” d’Arthur</li>
+</ul>
+
+<hr />
+
+<h2 id="kit-danimation">Kit d’animation</h2>
+
+<div class="kit">
+
+  <p><strong>Question d’ouverture</strong></p>
+
+  <blockquote>
+    <p>“Si quelqu’un cherche votre nom sur Google en ce moment, il trouve quoi ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Réponses variées : rien / photos / profils réseaux / résultats scolaires… Discussion sur ce qu’on contrôle ou pas.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Faire une recherche Google en direct sur un nom commun fictif. Montrer les types de résultats. Demander : “C’est normal que ça soit accessible ?”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Mission briefing</strong></p>
+
+  <blockquote>
+    <p>“Vous êtes enquêteurs. Voici une adresse email : arthur.mensch@proton.me. Retrouvez tout ce que vous pouvez sur cette personne. Vous avez 1h.”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Ils partent en autonomie. Ne pas donner les outils tout de suite — laisser 5 min de recherche libre avant d’introduire WhatsMyName si personne ne trouve.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si bloqués dès le départ</strong></p>
+
+  <blockquote>
+    <p>“Par où commenceriez-vous si vous cherchiez quelqu’un que vous connaissez ?”</p>
+  </blockquote>
+
+  <p>Puis introduire WhatsMyName : “Il existe des outils qui cherchent un pseudo sur des centaines de plateformes en même temps.”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question acte 2 — Google Dorks</strong></p>
+
+  <blockquote>
+    <p>“Google c’est juste une barre de recherche ? Ou on peut faire des choses plus précises ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Discussion sur les opérateurs : <code class="language-plaintext highlighter-rouge">site:</code>, <code class="language-plaintext highlighter-rouge">"guillemets"</code>, <code class="language-plaintext highlighter-rouge">filetype:</code>. On construit ensemble les dorks à utiliser.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Démo en direct : taper <code class="language-plaintext highlighter-rouge">site:github.com "amensch42"</code> et montrer la différence avec une recherche simple.</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question acte 4 — Street View</strong></p>
+
+  <blockquote>
+    <p>“Vous avez une rue. Comment vous feriez pour trouver exactement où habite Arthur sans y aller ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Ils pensent à Maps, Street View, photos satellites… On les laisse trouver la méthode avant de montrer Street View.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Ouvrir Google Maps, chercher la rue, passer en Street View. Demander : “Vous cherchez quoi sur ce mur ?”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question débrief — après la mise en commun</strong></p>
+
+  <blockquote>
+    <p>“Tout ce que vous avez trouvé sur Arthur — est-ce qu’on pourrait en trouver autant sur vous ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Prise de conscience personnelle. Discussion sur les traces involontaires : pseudo identique partout, email dans une bio, photo avec métadonnées GPS…</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <blockquote>
+    <p>“Est-ce que vous utilisez le même pseudo sur plusieurs plateformes ?”</p>
+  </blockquote>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question GitHub Pages</strong></p>
+
+  <blockquote>
+    <p>“Votre site est en ligne. N’importe qui peut le voir. C’est un problème ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Discussion sur ce qu’on veut partager ou pas, la notion de données personnelles, pourquoi passer en privé ou rester public. Lien avec l’enquête : si Arthur avait mis son repo en privé, qu’est-ce qu’on n’aurait pas trouvé ?</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Montrer les paramètres de visibilité d’un repo GitHub. Expliquer la différence entre public (indexé par Google) et privé.</p>
+
+</div>
+
+<hr />
+
+<h2 id="note-débrief--le-clin-dœil-mistral">Note débrief — le clin d’œil Mistral</h2>
+
+<p>En fin d’atelier, révéler que “Arthur Mensch” est aussi le vrai nom du co-fondateur de Mistral AI — la startup française qui a créé les modèles de langage open source. Ouvre une discussion sur l’IA française, l’écosystème tech européen, et le fait que des jeunes français ont créé une des boîtes IA les plus importantes du monde.</p>
+
+<hr />
+
+<h2 id="matériel-détaillé">Matériel détaillé</h2>
+
+<ul>
+  <li>Compte GitHub <a href="https://github.com/amensch42">amensch42</a> créé en amont avec bio (rue) et avatar (patte de chat)</li>
+  <li>Email fictif : arthur.mensch@proton.me (choisir Proton plutôt que Gmail = discussion sur chiffrement)</li>
+  <li>Fiche mission imprimée ou projetée : juste l’email, rien d’autre</li>
+</ul>
+
+<hr />
+
+<p><a href="../retours/cyber-osint-rex.md">Retour d’expérience</a></p>
+
+  </main>
+</body>
+</html>

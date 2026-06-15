@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scratch — Jeu Asteroid — Stage Seconde 2026</title>
+  <link rel="stylesheet" href="/stage2026/assets/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/stage2026/">Agenda</a>
+      <a href="/stage2026/ateliers/">Ateliers</a>
+      <a href="/stage2026/checklist">Checklist</a>
+    </nav>
+  </header>
+  <main>
+    <h1 id="scratch--jeu-asteroid">Scratch — Jeu Asteroid</h1>
+
+<p><strong>Durée :</strong> 2 sessions (3h matin + 2h après-midi)<br />
+<strong>Matériel :</strong> Ordinateurs, accès à scratch.mit.edu<br />
+<strong>Groupes :</strong> Groupe A (S1 mer–jeu), Groupe B (S3 mar)</p>
+
+<hr />
+
+<h2 id="objectif-pédagogique">Objectif pédagogique</h2>
+
+<p>À la fin de cet atelier, les stagiaires auront construit un jeu Asteroid complet en 4 itérations progressives dans Scratch, et documenté l’expérience sur leur site HTML.</p>
+
+<hr />
+
+<h2 id="itération-0--mise-en-place-du-projet">Itération 0 — Mise en place du projet</h2>
+
+<p>Le développement du jeu se déroule en plusieurs itérations. Chaque itération produit un résultat intermédiaire fonctionnel. La dernière itération finalise le jeu complet.</p>
+
+<p><strong>Briefing donné aux stagiaires pour l’itération 0 :</strong></p>
+
+<blockquote>
+  <p>“On va construire un jeu Asteroid de zéro. Avant de coder quoi que ce soit, il faut préparer le terrain : créer les sprites, leurs costumes, et leurs sons. C’est votre matière première.”</p>
+</blockquote>
+
+<p>Les stagiaires créent un nouveau projet Scratch et assemblent les éléments suivants :</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Élément</th>
+      <th>À créer</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fond d’écran</td>
+      <td>Fond d’espace (bibliothèque Scratch : “Stars” ou “Space”)</td>
+    </tr>
+    <tr>
+      <td>Vaisseau spatial</td>
+      <td>Sprite “Rocketship” (bibliothèque) — ajouter un costume explosion</td>
+    </tr>
+    <tr>
+      <td>Rayon laser</td>
+      <td>Sprite dessiné : petit rectangle allongé — dupliquer en 3 couleurs</td>
+    </tr>
+    <tr>
+      <td>Astéroïde</td>
+      <td>Sprite “Rocks” (bibliothèque) — ajouter un costume explosion</td>
+    </tr>
+    <tr>
+      <td>Son laser</td>
+      <td>Son “Laser1” (bibliothèque sons) — à attacher au sprite laser</td>
+    </tr>
+    <tr>
+      <td>Son explosion</td>
+      <td>Son “Crunch” ou “Boom Cloud” — à attacher au vaisseau et à l’astéroïde</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Objectif de l’itération 0 :</strong> avoir tous les éléments en place, explorer les costumes et sons, poser des questions. Aucun bloc de code à écrire.</p>
+
+<hr />
+
+<h2 id="les-4-itérations">Les 4 itérations</h2>
+
+<h3 id="itération-1--mouvements-objectif--faire-bouger-les-sprites">Itération 1 — Mouvements (objectif : faire bouger les sprites)</h3>
+
+<p><strong>Vaisseau :</strong></p>
+<ul>
+  <li>Se déplace haut/bas avec les touches fléchées</li>
+  <li>Effet de flottement (oscillation légère en permanence)</li>
+</ul>
+
+<p><strong>Laser :</strong></p>
+<ul>
+  <li>Tire quand le joueur appuie sur espace</li>
+  <li>Part du vaisseau, se déplace de gauche à droite en changeant de couleur</li>
+  <li>Émet un son de laser</li>
+  <li>Disparaît en sortant de l’écran</li>
+</ul>
+
+<p><strong>Astéroïde :</strong></p>
+<ul>
+  <li>Apparaît à droite à une hauteur aléatoire</li>
+  <li>Se déplace de droite à gauche automatiquement</li>
+  <li>Disparaît en sortant de l’écran, réapparaît à sa position initiale</li>
+</ul>
+
+<hr />
+
+<h3 id="itération-2--interactions-objectif--gérer-les-collisions">Itération 2 — Interactions (objectif : gérer les collisions)</h3>
+
+<p><strong>Vaisseau touché par l’astéroïde :</strong></p>
+<ul>
+  <li>Explose en émettant un son puis disparaît</li>
+  <li>Réapparaît à sa position initiale après 0,5 secondes</li>
+</ul>
+
+<p><strong>Astéroïde touché par le laser :</strong></p>
+<ul>
+  <li>Explose en émettant un son puis disparaît</li>
+  <li>Réapparaît à sa position initiale</li>
+</ul>
+
+<hr />
+
+<h3 id="itération-3--score-et-fin-de-partie-objectif--rendre-le-jeu-complet">Itération 3 — Score et fin de partie (objectif : rendre le jeu complet)</h3>
+
+<p><strong>Vies et score :</strong></p>
+<ul>
+  <li>Le vaisseau démarre avec 5 vies</li>
+  <li>Perd une vie à chaque collision avec l’astéroïde</li>
+  <li>Gagne 1 point à chaque astéroïde détruit</li>
+  <li>La partie se termine quand toutes les vies sont perdues</li>
+</ul>
+
+<p><strong>Fond d’écran :</strong></p>
+<ul>
+  <li>Fond représentant l’espace</li>
+  <li>Animé pour donner une impression de mouvement (défilement)</li>
+</ul>
+
+<hr />
+
+<h3 id="variantes-bonus--pour-les-plus-rapides">Variantes (bonus — pour les plus rapides)</h3>
+
+<ul>
+  <li>Tous les X points, augmenter la vitesse de l’astéroïde</li>
+  <li>Tous les X points, ajouter un astéroïde supplémentaire</li>
+  <li>Ajouter un bouclier temporaire activable</li>
+  <li>Ajouter des power-ups</li>
+  <li>… place à l’imagination !</li>
+</ul>
+
+<hr />
+
+<h2 id="timing">Timing</h2>
+
+<h3 id="session-1--itérations-0-1-et-2-3h">Session 1 — Itérations 0, 1 et 2 (3h)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Durée</th>
+      <th>Étape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0:00</td>
+      <td>Question d’ouverture</td>
+    </tr>
+    <tr>
+      <td>0:15</td>
+      <td>Présentation du projet de démarrage + exploration libre (10min)</td>
+    </tr>
+    <tr>
+      <td>0:25</td>
+      <td><strong>Itération 1</strong> — mouvements vaisseau + laser + astéroïde</td>
+    </tr>
+    <tr>
+      <td>1:15</td>
+      <td><strong>Itération 2</strong> — collisions et explosions</td>
+    </tr>
+    <tr>
+      <td>2:00</td>
+      <td>Tour de table : montrer sa version, qu’est-ce qui marche ?</td>
+    </tr>
+    <tr>
+      <td>2:20</td>
+      <td>Avance libre ou début itération 3</td>
+    </tr>
+    <tr>
+      <td>2:50</td>
+      <td>Débrief session 1</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="session-2--itération-3--finition-2h">Session 2 — Itération 3 + finition (2h)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Durée</th>
+      <th>Étape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0:00</td>
+      <td>Reprise, rappel objectif itération 3</td>
+    </tr>
+    <tr>
+      <td>0:10</td>
+      <td><strong>Itération 3</strong> — vies, score, fond animé</td>
+    </tr>
+    <tr>
+      <td>1:00</td>
+      <td>Question finition</td>
+    </tr>
+    <tr>
+      <td>1:10</td>
+      <td>Variantes libres</td>
+    </tr>
+    <tr>
+      <td>1:30</td>
+      <td>Capture d’écran + ajout d’une page sur le site HTML</td>
+    </tr>
+    <tr>
+      <td>1:45</td>
+      <td>Débrief collectif</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="kit-danimation">Kit d’animation</h2>
+
+<div class="kit">
+
+  <p><strong>Question d’ouverture</strong></p>
+
+  <blockquote>
+    <p>“Vous avez déjà joué à un jeu vidéo ? Comment vous pensez que c’est fait ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Réponses libres sur les mécaniques (personnage, ennemis, score, vie…). On liste au tableau. Ce sera exactement ce qu’on va construire — montrer que le jeu final correspond à cette liste.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Lancer une démo du jeu fini. Demander : “Qu’est-ce qu’il faudrait programmer pour que ça marche ?”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Introduction aux itérations</strong></p>
+
+  <blockquote>
+    <p>“On va construire ce jeu étape par étape. Chaque étape doit marcher avant de passer à la suivante. C’est comme ça que les vrais devs travaillent.”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Ils comprennent qu’on ne code pas tout d’un coup — on livre quelque chose qui marche à chaque itération.</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question finition (session 2)</strong></p>
+
+  <blockquote>
+    <p>“Votre jeu est complet. Qu’est-ce qui le rendrait plus fun ou plus difficile ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Idées libres : vitesse, plusieurs astéroïdes, boss, power-ups… Ils choisissent une variante et l’implémentent.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Proposer trois variantes concrètes : augmenter la vitesse tous les 5 points / ajouter un 2ème astéroïde à 10 points / ajouter un son de victoire à 20 points.</p>
+
+</div>
+
+<hr />
+
+<h2 id="matériel-détaillé">Matériel détaillé</h2>
+
+<ul>
+  <li>Accès à <a href="https://scratch.mit.edu">scratch.mit.edu</a></li>
+  <li>Projet de démarrage (itération 0) partagé via un lien Scratch ou téléchargeable</li>
+  <li>Pas d’installation nécessaire</li>
+  <li>Compte Scratch recommandé pour sauvegarder (créer en amont ou au début de session)</li>
+</ul>
+
+<hr />
+
+<p><a href="../retours/scratch-rex.md">Retour d’expérience</a></p>
+
+  </main>
+</body>
+</html>

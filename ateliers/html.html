@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML + CSS + GitHub Pages — Stage Seconde 2026</title>
+  <link rel="stylesheet" href="/stage2026/assets/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/stage2026/">Agenda</a>
+      <a href="/stage2026/ateliers/">Ateliers</a>
+      <a href="/stage2026/checklist">Checklist</a>
+    </nav>
+  </header>
+  <main>
+    <h1 id="html--css--github-pages">HTML + CSS + GitHub Pages</h1>
+
+<p><strong>Durée :</strong> 3 sessions (2h + 2h + 2h)<br />
+<strong>Matériel :</strong> Ordinateurs, VS Code, comptes GitHub<br />
+<strong>Groupes :</strong> Groupe A (S1 lun–mar), Groupe B (S2 ven tutorat + S3 lun)</p>
+
+<hr />
+
+<h2 id="objectif-pédagogique">Objectif pédagogique</h2>
+
+<p>À la fin de cet atelier, les stagiaires auront publié un site HTML personnel sur GitHub Pages qui leur sert de portfolio pour toute la semaine — une nouvelle page ajoutée après chaque atelier.</p>
+
+<hr />
+
+<h2 id="session-1--structure-de-base-2h">Session 1 — Structure de base (2h)</h2>
+
+<h3 id="mise-en-place-de-vs-code">Mise en place de VS Code</h3>
+
+<ol>
+  <li>Ouvrir VS Code</li>
+  <li>Créer un dossier <code class="language-plaintext highlighter-rouge">mon-site</code> sur le bureau</li>
+  <li>Dans VS Code : <strong>File → Open Folder</strong> → sélectionner <code class="language-plaintext highlighter-rouge">mon-site</code></li>
+  <li>Dans l’explorateur à gauche : clic droit → <strong>New File</strong> → nommer <code class="language-plaintext highlighter-rouge">index.html</code></li>
+</ol>
+
+<blockquote>
+  <p><strong>VS Code en 30 secondes :</strong> explorateur de fichiers à gauche, éditeur au centre, terminal en bas (<code class="language-plaintext highlighter-rouge">Ctrl+ù</code> ou <code class="language-plaintext highlighter-rouge">Terminal → New Terminal</code>). Pour ouvrir le fichier dans le navigateur : clic droit sur <code class="language-plaintext highlighter-rouge">index.html</code> → <em>Open with Live Server</em> (si l’extension est installée), ou glisser le fichier dans Chrome.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="structure-de-base-dune-page-html">Structure de base d’une page HTML</h3>
+
+<p>Coller ce squelette dans <code class="language-plaintext highlighter-rouge">index.html</code> :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"fr"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Mon site<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+  <span class="nt">&lt;h1&gt;</span>Bonjour, je m'appelle Prénom<span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Je suis stagiaire chez SAP en juin 2026.<span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Explication ligne par ligne :</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Balise</th>
+      <th>Rôle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;!DOCTYPE html&gt;</code></td>
+      <td>Dit au navigateur que c’est du HTML5</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;html lang="fr"&gt;</code></td>
+      <td>Début du document, langue française</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;head&gt;</code></td>
+      <td>Informations sur la page (non visibles)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;meta charset="UTF-8"&gt;</code></td>
+      <td>Permet les accents et caractères spéciaux</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;title&gt;</code></td>
+      <td>Texte affiché dans l’onglet du navigateur</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;body&gt;</code></td>
+      <td>Tout ce qui s’affiche dans la page</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code></td>
+      <td>Titre principal (il n’y en a qu’un par page)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">&lt;p&gt;</code></td>
+      <td>Paragraphe</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Ouvrir dans Chrome → vérifier que ça s’affiche.</p>
+
+<hr />
+
+<h3 id="les-balises-essentielles">Les balises essentielles</h3>
+
+<p>Faire tester chacune en l’ajoutant dans le <code class="language-plaintext highlighter-rouge">&lt;body&gt;</code> :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Titres --&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Titre principal<span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;h2&gt;</span>Sous-titre<span class="nt">&lt;/h2&gt;</span>
+<span class="nt">&lt;h3&gt;</span>Sous-sous-titre<span class="nt">&lt;/h3&gt;</span>
+
+<span class="c">&lt;!-- Texte --&gt;</span>
+<span class="nt">&lt;p&gt;</span>Un paragraphe de texte.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;strong&gt;</span>Texte en gras<span class="nt">&lt;/strong&gt;</span>
+<span class="nt">&lt;em&gt;</span>Texte en italique<span class="nt">&lt;/em&gt;</span>
+
+<span class="c">&lt;!-- Listes --&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Élément 1<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Élément 2<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="c">&lt;!-- Lien --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"https://sap.com"</span><span class="nt">&gt;</span>Visiter SAP<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Image --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"photo.jpg"</span> <span class="na">alt=</span><span class="s">"Description de l'image"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Saut de ligne --&gt;</span>
+<span class="nt">&lt;br&gt;</span>
+
+<span class="c">&lt;!-- Ligne horizontale --&gt;</span>
+<span class="nt">&lt;hr&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="liens-entre-pages">Liens entre pages</h3>
+
+<p>Quand le site a plusieurs pages, il faut naviguer entre elles.</p>
+
+<p>Depuis <code class="language-plaintext highlighter-rouge">index.html</code> vers une autre page :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"agenda.html"</span><span class="nt">&gt;</span>Mon agenda<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>Lien retour dans <code class="language-plaintext highlighter-rouge">agenda.html</code> :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"index.html"</span><span class="nt">&gt;</span>← Retour à l'accueil<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>Lien vers une section dans la même page (ancre) :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- La cible --&gt;</span>
+<span class="nt">&lt;h2</span> <span class="na">id=</span><span class="s">"semaine1"</span><span class="nt">&gt;</span>Semaine 1<span class="nt">&lt;/h2&gt;</span>
+
+<span class="c">&lt;!-- Le lien --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#semaine1"</span><span class="nt">&gt;</span>Voir semaine 1<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<p>Barre de navigation commune à toutes les pages :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"index.html"</span><span class="nt">&gt;</span>Accueil<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"agenda.html"</span><span class="nt">&gt;</span>Agenda<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"scratch.html"</span><span class="nt">&gt;</span>Scratch<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/nav&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Copier-coller la même <code class="language-plaintext highlighter-rouge">&lt;nav&gt;</code> dans chaque fichier HTML — navigation identique sur tout le site.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="tableaux">Tableaux</h3>
+
+<p>Structure de base :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Jour<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Matin<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;th&gt;</span>Après-midi<span class="nt">&lt;/th&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Lundi<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>HTML<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>HTML CSS<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;tr&gt;</span>
+    <span class="nt">&lt;td&gt;</span>Mardi<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>CSS + interview<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;td&gt;</span>OpenCode<span class="nt">&lt;/td&gt;</span>
+  <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</code></pre></div></div>
+
+<p>CSS pour le rendre lisible :</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">table</span> <span class="p">{</span>
+  <span class="nl">border-collapse</span><span class="p">:</span> <span class="nb">collapse</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">th</span><span class="o">,</span> <span class="nt">td</span> <span class="p">{</span>
+  <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="nx">#cccccc</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">8px</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nl">text-align</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">th</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nx">#0070ad</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">white</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>L’agenda du stage est l’exercice naturel : jours en lignes, matin/après-midi en colonnes.</p>
+</blockquote>
+
+<hr />
+
+<p>Chaque stagiaire crée sa page de présentation dans <code class="language-plaintext highlighter-rouge">index.html</code> :</p>
+
+<ul>
+  <li>Un <code class="language-plaintext highlighter-rouge">&lt;h1&gt;</code> avec son prénom</li>
+  <li>Un <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> de présentation (2–3 phrases)</li>
+  <li>Une liste <code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code> de 3 centres d’intérêt</li>
+  <li>Un lien vers un site qu’il aime</li>
+</ul>
+
+<blockquote>
+  <p>Pas de CSS encore — l’objectif c’est que ça marche, pas que ce soit beau. Le moche est temporaire.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="créer-la-page-agenda">Créer la page agenda</h3>
+
+<p>Créer un deuxième fichier : <code class="language-plaintext highlighter-rouge">agenda.html</code></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"fr"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>Mon agenda<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+
+  <span class="nt">&lt;h1&gt;</span>Mon agenda de stage<span class="nt">&lt;/h1&gt;</span>
+
+  <span class="nt">&lt;h2&gt;</span>Semaine 1<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Lundi — Accueil, HTML<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Mardi — HTML CSS, interview architecte<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Mercredi — Scratch<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Jeudi — Scratch, modélisation 3D<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>Vendredi — Cyber / OSINT<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"index.html"</span><span class="nt">&gt;</span>← Retour à l'accueil<span class="nt">&lt;/a&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Puis ajouter le lien vers l’agenda dans <code class="language-plaintext highlighter-rouge">index.html</code> :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"agenda.html"</span><span class="nt">&gt;</span>Mon agenda<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="session-2--css-2h">Session 2 — CSS (2h)</h2>
+
+<h3 id="créer-le-fichier-css">Créer le fichier CSS</h3>
+
+<p>Dans VS Code, créer <code class="language-plaintext highlighter-rouge">style.css</code> dans le même dossier que <code class="language-plaintext highlighter-rouge">index.html</code>.</p>
+
+<p>Lier le CSS dans le <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code> de <strong>chaque page HTML</strong> :</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="premiers-styles">Premiers styles</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Couleur de fond et texte général */</span>
+<span class="nt">body</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nx">#f5f5f5</span><span class="p">;</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">#333333</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="n">Arial</span><span class="p">,</span> <span class="nb">sans-serif</span><span class="p">;</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">800px</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Titre principal */</span>
+<span class="nt">h1</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">#0070ad</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Liens */</span>
+<span class="nt">a</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="nx">#0070ad</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Paragraphes */</span>
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.6</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Recharger la page dans Chrome — voir la différence.</p>
+
+<p><strong>Propriétés CSS à explorer :</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Propriété</th>
+      <th>Exemple</th>
+      <th>Effet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">color: red;</code></td>
+      <td>Couleur du texte</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">background-color</code></td>
+      <td><code class="language-plaintext highlighter-rouge">background-color: #f0f0f0;</code></td>
+      <td>Couleur de fond</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">font-size</code></td>
+      <td><code class="language-plaintext highlighter-rouge">font-size: 18px;</code></td>
+      <td>Taille du texte</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">font-family</code></td>
+      <td><code class="language-plaintext highlighter-rouge">font-family: Georgia;</code></td>
+      <td>Police</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">margin</code></td>
+      <td><code class="language-plaintext highlighter-rouge">margin: 20px;</code></td>
+      <td>Espace extérieur</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">padding</code></td>
+      <td><code class="language-plaintext highlighter-rouge">padding: 10px;</code></td>
+      <td>Espace intérieur</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">border</code></td>
+      <td><code class="language-plaintext highlighter-rouge">border: 1px solid black;</code></td>
+      <td>Bordure</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">text-align</code></td>
+      <td><code class="language-plaintext highlighter-rouge">text-align: center;</code></td>
+      <td>Alignement</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="classes-css">Classes CSS</h3>
+
+<p>Pour styliser certains éléments différemment :</p>
+
+<p>Dans le HTML :</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"important"</span><span class="nt">&gt;</span>Ce texte est important.<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<p>Dans le CSS :</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.important</span> <span class="p">{</span>
+  <span class="nl">background-color</span><span class="p">:</span> <span class="nx">#fff8e1</span><span class="p">;</span>
+  <span class="nl">border-left</span><span class="p">:</span> <span class="m">4px</span> <span class="nb">solid</span> <span class="nx">#ffc107</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="exercice-libre--personnaliser-son-site">Exercice libre — Personnaliser son site</h3>
+
+<p>30 minutes pour que chaque stagiaire personnalise son site : couleurs, polices, mise en page. L’objectif est que chaque site soit reconnaissable et différent des autres.</p>
+
+<hr />
+
+<h3 id="transition-vers-opencode">Transition vers OpenCode</h3>
+
+<blockquote>
+  <p>“Votre site a une structure qui marche. Maintenant on va demander à une IA de l’améliorer — et on va comparer.”</p>
+</blockquote>
+
+<p>Exercice en deux temps :</p>
+
+<ol>
+  <li>
+    <p>Copier le contenu de <code class="language-plaintext highlighter-rouge">index.html</code> dans OpenCode avec le prompt :<br />
+<em>“Améliore le style CSS de cette page HTML pour qu’elle soit plus professionnelle et lisible. Garde la même structure.”</em></p>
+  </li>
+  <li>
+    <p>Comparer le résultat avec la version manuelle :</p>
+    <ul>
+      <li>Qu’est-ce que l’IA a fait différemment ?</li>
+      <li>Y a-t-il des choses que vous n’auriez pas pensé à faire ?</li>
+      <li>Y a-t-il des choses que vous préférez dans votre version ?</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="session-3--github-pages-intégré-à-latelier-cyber">Session 3 — GitHub Pages (intégré à l’atelier Cyber)</h2>
+
+<h3 id="créer-le-dépôt-github">Créer le dépôt GitHub</h3>
+
+<ol>
+  <li>Se connecter sur <a href="https://github.com">github.com</a></li>
+  <li>Cliquer sur <strong>New repository</strong></li>
+  <li>Nom du dépôt : <code class="language-plaintext highlighter-rouge">mon-site</code> (ou <code class="language-plaintext highlighter-rouge">prenom-stage</code>)</li>
+  <li>Cocher <strong>Public</strong></li>
+  <li>Ne pas initialiser avec README</li>
+  <li>Cliquer <strong>Create repository</strong></li>
+</ol>
+
+<hr />
+
+<h3 id="pousser-le-site-depuis-vs-code">Pousser le site depuis VS Code</h3>
+
+<p>Dans le terminal VS Code (<code class="language-plaintext highlighter-rouge">Ctrl+ù</code>) :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Premier commit - mon site de stage"</span>
+git branch <span class="nt">-M</span> main
+git remote add origin https://github.com/TON_PSEUDO/mon-site.git
+git push <span class="nt">-u</span> origin main
+</code></pre></div></div>
+
+<blockquote>
+  <p>Remplacer <code class="language-plaintext highlighter-rouge">TON_PSEUDO</code> par le pseudo GitHub du stagiaire.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="activer-github-pages">Activer GitHub Pages</h3>
+
+<ol>
+  <li>Sur GitHub, aller dans <strong>Settings</strong> du dépôt</li>
+  <li>Section <strong>Pages</strong> dans le menu gauche</li>
+  <li>Source : <strong>Deploy from a branch</strong></li>
+  <li>Branch : <code class="language-plaintext highlighter-rouge">main</code> / <code class="language-plaintext highlighter-rouge">/ (root)</code></li>
+  <li>Cliquer <strong>Save</strong></li>
+  <li>Attendre 1–2 minutes → l’URL apparaît : <code class="language-plaintext highlighter-rouge">https://pseudo.github.io/mon-site</code></li>
+</ol>
+
+<hr />
+
+<h3 id="mettre-à-jour-le-site">Mettre à jour le site</h3>
+
+<p>À chaque nouvel atelier, le stagiaire ajoute une page et la pousse :</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Ajout page Scratch"</span>
+git push
+</code></pre></div></div>
+
+<p>GitHub Pages se met à jour automatiquement en 1–2 minutes.</p>
+
+<hr />
+
+<h2 id="kit-danimation">Kit d’animation</h2>
+
+<div class="kit">
+
+  <p><strong>Question d’ouverture — Session 1</strong></p>
+
+  <blockquote>
+    <p>“Si vous deviez expliquer à quelqu’un ce qu’est une page web, vous diriez quoi ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Analogies libres (feuille de papier, affiche, livre…). On part de leurs réponses pour introduire HTML comme “le squelette” — ce qui structure le contenu, sans se préoccuper de l’apparence.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Ouvrir n’importe quelle page web, clic droit → <strong>Afficher le code source</strong>. Demander : “Vous reconnaissez des mots ?”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question d’ouverture — Session 2 (CSS)</strong></p>
+
+  <blockquote>
+    <p>“Votre site marche, mais il est moche. Comment on pourrait l’améliorer ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Liste libre : couleurs, polices, images, mise en page… On en fait le plan de la session CSS.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Montrer deux versions du même site (sans CSS / avec CSS). Demander : “Laquelle vous préférez et pourquoi ?”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Question débrief OpenCode</strong></p>
+
+  <blockquote>
+    <p>“L’IA a proposé quelque chose. Est-ce que vous l’avez pris tel quel, modifié, ou rejeté ? Pourquoi ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Discussion sur l’IA comme outil, pas comme oracle. On peut la corriger, la guider, choisir de ne pas la suivre.</p>
+
+</div>
+
+<hr />
+
+<h2 id="matériel-détaillé">Matériel détaillé</h2>
+
+<ul>
+  <li>Comptes GitHub créés en amont (ou 15min lundi matin)</li>
+  <li>VS Code installé sur les machines</li>
+  <li>Extension VS Code : <strong>Live Server</strong> (aperçu instantané dans Chrome)</li>
+  <li>OpenCode installé et configuré</li>
+  <li>Chrome ou Firefox comme navigateur par défaut</li>
+</ul>
+
+<hr />
+
+<h2 id="bonus--ressources-additionnelles">Bonus — Ressources additionnelles</h2>
+
+<p>Pour les stagiaires qui veulent aller plus loin ou qui ont de l’avance.</p>
+
+<h3 id="css-interactif">CSS interactif</h3>
+
+<ul>
+  <li><strong><a href="https://flukeout.github.io">CSS Diner</a></strong> — apprendre les sélecteurs CSS en sélectionnant des plats. Objectif : atteindre le niveau 32.</li>
+  <li><strong><a href="https://flexboxfroggy.com">Flexbox Froggy</a></strong> — apprendre Flexbox en guidant des grenouilles. Objectif : atteindre le niveau 24.</li>
+</ul>
+
+<h3 id="javascript">JavaScript</h3>
+
+<ul>
+  <li><strong><a href="https://alexnisnevich.github.io/untrusted/">Untrusted</a></strong> — modifier du code JavaScript pour faire avancer un personnage dans un jeu. Accessible dès qu’on a vu les bases.</li>
+  <li><strong><a href="https://play.elevatorsaga.com/">Elevator Saga</a></strong> <em>(super complexe)</em> — programmer des ascenseurs en JavaScript pour optimiser les déplacements. Pour les plus avancés.</li>
+</ul>
+
+<hr />
+
+<p><a href="../retours/html-rex.md">Retour d’expérience</a></p>
+
+  </main>
+</body>
+</html>
