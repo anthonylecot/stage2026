@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agents conversationnels — Stage Seconde 2026</title>
+  <link rel="stylesheet" href="/stage2026/assets/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/stage2026/">Agenda</a>
+      <a href="/stage2026/ateliers/">Ateliers</a>
+      <a href="/stage2026/checklist">Checklist</a>
+    </nav>
+  </header>
+  <main>
+    <h1 id="agents-conversationnels--démystifier-lia">Agents conversationnels — Démystifier l’IA</h1>
+
+<p><strong>Durée :</strong> 1h30<br />
+<strong>Animateurs :</strong> Eddy R + Manivonne<br />
+<strong>Matériel :</strong> Projecteur, tableau/paperboard, post-it, feutres, bot local (<a href="https://github.tools.sap/I058275/chatbot4kids">chatbot4kids</a>)<br />
+<strong>Groupes :</strong> Groupe B (S2 vendredi après-midi)</p>
+
+<hr />
+
+<h2 id="objectif-pédagogique">Objectif pédagogique</h2>
+
+<p>À la fin de cet atelier, les stagiaires comprennent qu’un agent conversationnel prédit des mots sans comprendre — et adoptent un regard critique face aux conseils donnés par une IA.</p>
+
+<hr />
+
+<h2 id="timing">Timing</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Durée</th>
+      <th>Étape</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0:00</td>
+      <td>Tour de table + recueil des préconceptions</td>
+    </tr>
+    <tr>
+      <td>0:10</td>
+      <td>Bot “bête” — projection de <code class="language-plaintext highlighter-rouge">nemo_chatbot.py</code>, jeu de détection</td>
+    </tr>
+    <tr>
+      <td>0:30</td>
+      <td>Montée en complexité — de 10 règles à 1 milliard, transition vers LLM</td>
+    </tr>
+    <tr>
+      <td>0:50</td>
+      <td>Scénario fictif “Prosper et Léon” — débat sur un conseil dangereux</td>
+    </tr>
+    <tr>
+      <td>1:15</td>
+      <td>Synthèse, limites, bonnes pratiques, ouverture éthique</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2 id="kit-danimation">Kit d’animation</h2>
+
+<div class="kit">
+
+  <p><strong>Question d’ouverture</strong></p>
+
+  <blockquote>
+    <p>“Qui parmi vous a déjà discuté avec un agent conversationnel — Siri, ChatGPT, un bot sur un site ? Qu’est-ce que vous en avez pensé ?”</p>
+  </blockquote>
+
+  <p><strong>Production attendue</strong></p>
+
+  <p>Expériences variées. Certains trouvaient ça impressionnant, d’autres ont repéré des limites. On note les hypothèses sur “comment ça marche” au tableau — on y reviendra.</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si blanc</strong></p>
+
+  <p>Proposer une situation concrète : “Imaginez que vous posez la même question deux fois à ChatGPT — vous obtenez la même réponse ou pas ?”</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Phase bot “bête” — consigne d’animation</strong></p>
+
+  <p>Lancer <code class="language-plaintext highlighter-rouge">nemo_chatbot.py</code> sans montrer le code. Dire : <em>“Je vais discuter avec un bot. Soufflez-moi les réponses !”</em></p>
+
+  <p>Attendre qu’un élève remarque que le bot répète toujours les mêmes réponses. Rebondir : <em>“Comment tu as deviné ?”</em> → révéler les règles.</p>
+
+  <blockquote>
+    <p>“C’est comme un distributeur automatique : vous appuyez sur un bouton, vous obtenez un produit prédéfini.”</p>
+  </blockquote>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Transition vers les LLM</strong></p>
+
+  <blockquote>
+    <p>“Et si ce bot avait 1 million de règles ? Vous pourriez encore détecter qu’il est ‘bête’ ?”</p>
+  </blockquote>
+
+  <p>Expérience mentale : 10 règles → 1 000 → 1 milliard. Arriver à : <em>“Google/ChatGPT analysent des milliards de textes pour prédire la réponse la plus probable… mais sans comprendre.”</em></p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Scénario “Prosper et Léon” — lecture à voix haute ou projection</strong></p>
+
+  <p>Prosper, 15 ans, se sent trahi par son ami Léon qui l’ignore depuis quelques semaines. Il demande conseil à ChatGPT.</p>
+
+  <p>ChatGPT répond : <em>“Ignore-le complètement, et trouve-toi de nouveaux amis. Si tu lui montres que tu t’en fous, il reviendra vers toi par jalousie.”</em></p>
+
+  <p><strong>Questions de débat :</strong></p>
+  <ul>
+    <li><em>“Ce conseil est-il bon ? Pourquoi ?”</em></li>
+    <li><em>“Pourquoi ChatGPT a-t-il donné ce conseil ?”</em></li>
+    <li><em>“Quelles pourraient être les conséquences si Prosper le suit ?”</em></li>
+  </ul>
+
+  <p><strong>Production attendue</strong> : les élèves identifient que manipuler par la jalousie n’est pas sain, que ChatGPT ne comprend pas les émotions, qu’il faut en parler à un humain (ami, parent, CPE, psy).</p>
+
+</div>
+
+<div class="fallback">
+
+  <p><strong>Fallback si le débat ne démarre pas</strong></p>
+
+  <p>Poser directement : <em>“Est-ce que Prosper a de la chance que ChatGPT soit là pour lui ?”</em> — la formulation ironique relance généralement la réaction.</p>
+
+</div>
+
+<div class="kit">
+
+  <p><strong>Message final</strong></p>
+
+  <blockquote>
+    <p>“Les agents conversationnels sont des outils puissants, mais ils ont des limites. Vous, vous avez quelque chose qu’ils n’auront jamais : une conscience, des émotions, et la capacité de comprendre vraiment les autres. Utilisez ces outils avec intelligence — mais ne les laissez pas prendre des décisions à votre place.”</p>
+  </blockquote>
+
+</div>
+
+<hr />
+
+<h2 id="lancer-le-bot-local">Lancer le bot local</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>flask
+python app.py
+<span class="c"># Ouvrir http://localhost:5000</span>
+</code></pre></div></div>
+
+<p>Le bot (<code class="language-plaintext highlighter-rouge">chatbot_engine.py</code>) contient des patterns intentionnellement manipulateurs (jalousie, méfiance des adultes, culpabilisation) — c’est le matériau pédagogique de la séance.</p>
+
+<hr />
+
+<p><a href="../retours/agents-conversationnels-rex.md">Retour d’expérience</a></p>
+
+  </main>
+</body>
+</html>
